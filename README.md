@@ -51,3 +51,9 @@ Sample Output:
 
 
 ```
+
+2.The below is the command to delete vpc
+
+```
+aws ec2 delete-vpc --vpc-id <your-vpc-id>
+```
