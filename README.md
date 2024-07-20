@@ -17,6 +17,7 @@ Command:
 
 Sample Output:
 '''
+
 {
     "Vpc": {
         "CidrBlock": "10.0.0.0/16",
@@ -44,6 +45,7 @@ Sample Output:
         ]
     }
 }
+
 '''
 
 
