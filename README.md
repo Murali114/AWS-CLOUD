@@ -17,8 +17,7 @@ Command:
 
 Sample Output:
 
-'''
-
+```
 
 
 {
@@ -50,4 +49,5 @@ Sample Output:
 }
 
 
-'''
+
+```
