@@ -3,7 +3,7 @@ AwSTemplateFormatVersion: "2010-09-09"
 Description: >
   This template creates VPC in us-east-1 region
   Author: Murali
-  Company: test
+  Company: Havik
 Resources:
   MyCfnVPC:
     Type: AWS::EC2::VPC
