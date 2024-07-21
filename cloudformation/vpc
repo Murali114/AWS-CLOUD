@@ -1,4 +1,5 @@
-AwSTemplateFormatVersion: "2010-09-09-
+
+AwSTemplateFormatVersion: "2010-09-09"
 Description: >
   This template creates VPC in us-east-1 region
   Author: Murali
