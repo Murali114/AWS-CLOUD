@@ -5,13 +5,13 @@ Description: >
   Company: test
 Resources:
   MyCfnVPC:
-  Type: ANS:: EC2::VPC
-  Properties
-    Cidchlock: "10.0.0.0/16"
-    Tags:
-    - Key: Name
-      Value: MyProdVPC
-    - Key: Env 
-      Value: Prod
-    - Key: Department
-      Value: DevOps
+    Type: AWS::EC2::VPC
+    Properties
+      Cidrblock: "10.0.0.0/16"
+      Tags:
+      - Key: Name
+        Value: MyProdVPC
+      - Key: Env 
+        Value: Prod
+      - Key: Department
+        Value: DevOps
