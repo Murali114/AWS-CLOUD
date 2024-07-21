@@ -13,7 +13,7 @@ Command:
                 [{Key-Name, Value-MyVpc}]
 
 
-'''     
+'''
 
 Sample Output:
 
