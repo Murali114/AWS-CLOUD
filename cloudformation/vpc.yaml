@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: "2010-09-09"
 Description: >
-  This template creates VPC in us-east-1 region
+  This template creates VPC in ap-south-1 region
   Author: Murali
   Company: Havik
 Resources:
