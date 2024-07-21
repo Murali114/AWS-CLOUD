@@ -6,11 +6,12 @@ Description: >
 Resources:
   MyCfnVPC:
   Type: ANS:: EC2::VPC
-  Cidchlock: "10.0.0.0/16"
-  Tags:
-  - Key: Name
-    Value: MyProdVPC
-  - Key: Env 
-    Value: Prod
-  - Key: Department
-    Value: DevOps
+  Properties
+    Cidchlock: "10.0.0.0/16"
+    Tags:
+    - Key: Name
+      Value: MyProdVPC
+    - Key: Env 
+      Value: Prod
+    - Key: Department
+      Value: DevOps
