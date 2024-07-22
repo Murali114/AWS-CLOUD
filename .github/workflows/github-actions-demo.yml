@@ -29,6 +29,5 @@ jobs:
           aws-region: ap-south-1
       - run: aws ec2 create-vpc --cidr-block 10.0.0.0/16
       - run: aws ec2 create-subnet --vpc-id vpc-0e11e1f3ab33ae19d --cidr-block 10.0.1.0/24 --availability-zone ap-south-1a
-      - run: aws ec2 create-subnet --vpc-id vpc-0e11e1f3ab33ae19d --cidr-block 10.0.3.0/24 --availability-zone ap-south-1b
       - run: aws ec2 create-internet-gateway
 
