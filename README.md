@@ -57,3 +57,10 @@ Sample Output:
 ```
 aws ec2 delete-vpc --vpc-id <your-vpc-id>
 ```
+
+
+3.The below command is used to add subnets to your vpc
+
+```
+aws ec2 create-subnet --vpc-id <your_vpc_id> --cidr-block 10.0.1.0/24 --availability-zone us-west-2a
+```
