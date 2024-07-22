@@ -1,11 +1,11 @@
 name: create vpc demo
 on:
   workflow_dispatch:
-     inputs:
-       my_input:
-          description: My input description
-          required: false
-          type: string
+    inputs:
+      my_input:
+        description: My input description
+        required: false
+        type: string
 jobs:
   create-vpc:
     runs-on:ubuntu-latest
