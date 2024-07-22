@@ -59,8 +59,27 @@ aws ec2 delete-vpc --vpc-id <your-vpc-id>
 ```
 
 
-3.The below command is used to add subnets to your vpc
+3.The below command is used to create subnets to your vpc
 
 ```
 aws ec2 create-subnet --vpc-id <your_vpc_id> --cidr-block 10.0.1.0/24 --availability-zone us-west-2a
+```
+
+4.The below command is used to delete subnet 
+
+```
+aws ec2 delete-subnet --subnet-id <your_subnet_id>
+```
+
+5.The below commands are creating and attach internet gateway to your vpc
+
+```
+aws ec2 create-internet-gateway
+aws ec2 attach-internet-gateway --vpc-id vpc-xxxxxxxx --internet-gateway-id igw-xxxxxxxx
+```
+
+6.The below command is used to create route table
+
+```
+aws ec2 create-route-table --vpc-id vpc-xxxxxxxx
 ```
