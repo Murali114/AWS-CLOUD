@@ -76,3 +76,15 @@ aws ec2 attach-internet-gateway --vpc-id vpc-xxxxxxxx --internet-gateway-id igw-
 ```
 aws ec2 create-route-table --vpc-id vpc-xxxxxxxx
 ```
+
+6.The below is the command to create the route to the internet-gateway
+
+```
+aws ec2 create-route --route-table-id rtb-xxxxxxxx --destination-cidr-block 0.0.0.0/0 --gateway-id igw-xxxxxxxx
+```
+
+7.The below command is used to Associate the Public Subnet with the Route Table
+
+```
+aws ec2 associate-route-table --subnet-id subnet-xxxxxxxx --route-table-id rtb-xxxxxxxx
+```
