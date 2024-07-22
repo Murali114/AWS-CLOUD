@@ -19,4 +19,4 @@ jobs:
           aws-region: ap-south-1
       - run: aws cloudformation update-stack --stack-name prod-vpc --template-body=file://cloudformation/vpc.yaml
       - run: sleep 20
-      - run: aws cloudformation describe-stack-events --stack-name test-vpc
+      - run: aws cloudformation describe-stack-events --stack-name prod-vpc
