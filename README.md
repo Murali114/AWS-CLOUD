@@ -72,7 +72,7 @@ aws ec2 create-subnet --vpc-id vpc-05a27c308645122dc --cidr-block 10.1.1.0/24 --
         "MapPublicIpOnLaunch": false,
         "State": "available",
         "SubnetId": "subnet-0ba98693e27d8849e",
-        "VpcId": "vpc-05a27c308645122dc",
+        "VpcId": "vpc-12266637c",
         "OwnerId": "381492281943",
         "AssignIpv6AddressOnCreation": false,
         "Ipv6CidrBlockAssociationSet": [],
@@ -95,13 +95,51 @@ aws ec2 create-subnet --vpc-id vpc-05a27c308645122dc --cidr-block 10.1.1.0/24 --
 
 ```
 aws ec2 create-internet-gateway
+
+aws ec2 create-internet-gateway
+{
+    "InternetGateway": {
+        "Attachments": [],
+        "InternetGatewayId": "igw-0cb178f7d6d6e13ce",
+        "OwnerId": "381492281943",
+        "Tags": []
+    }
+}
+
+
 aws ec2 attach-internet-gateway --vpc-id vpc-xxxxxxxx --internet-gateway-id igw-xxxxxxxx
+
+aws ec2 attach-internet-gateway --vpc-id vpc-05a27c308hjj78dc --internet-gateway-id igw-0cb178f7d6d6e13ce
+
 ```
 
 5.The below command is used to create route table
 
 ```
 aws ec2 create-route-table --vpc-id vpc-xxxxxxxx
+
+aws ec2 create-route-table --vpc-id vpc-05a27c308645122dc
+{
+    "RouteTable": {
+        "Associations": [],
+        "PropagatingVgws": [],
+        "RouteTableId": "rtb-0750f2d6ef8e9f287",
+        "Routes": [
+            {
+                "DestinationCidrBlock": "10.1.0.0/16",
+                "GatewayId": "local",
+                "Origin": "CreateRouteTable",
+                "State": "active"
+            }
+        ],
+        "Tags": [],
+        "VpcId": "vpc-05a27chds5122dc",
+        "OwnerId": "381492281943"
+    },
+    "ClientToken": "ee49669d-b5a5-4c6f-979b-2cdd38539163"
+}
+
+
 ```
 
 6.The below is the command to create the route to the internet-gateway
