@@ -61,7 +61,34 @@ aws ec2 delete-vpc --vpc-id <your-vpc-id>
 3.The below command is used to create subnets to your vpc
 
 ```
-aws ec2 create-subnet --vpc-id <your_vpc_id> --cidr-block 10.0.1.0/24 --availability-zone us-west-2a
+aws ec2 create-subnet --vpc-id vpc-05a27c308645122dc --cidr-block 10.1.1.0/24 --availability-zone ap-south-1a
+{
+    "Subnet": {
+        "AvailabilityZone": "ap-south-1a",
+        "AvailabilityZoneId": "aps1-az1",
+        "AvailableIpAddressCount": 251,
+        "CidrBlock": "10.1.1.0/24",
+        "DefaultForAz": false,
+        "MapPublicIpOnLaunch": false,
+        "State": "available",
+        "SubnetId": "subnet-0ba98693e27d8849e",
+        "VpcId": "vpc-05a27c308645122dc",
+        "OwnerId": "381492281943",
+        "AssignIpv6AddressOnCreation": false,
+        "Ipv6CidrBlockAssociationSet": [],
+        "SubnetArn": "arn:aws:ec2:ap-south-1:381492281943:subnet/subnet-0ba98693e27d8849e",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "PrivateDnsNameOptionsOnLaunch": {
+            "HostnameType": "ip-name",
+            "EnableResourceNameDnsARecord": false,
+            "EnableResourceNameDnsAAAARecord": false
+        }
+    }
+}
+
+
+
 ```
 
 4.The below commands are creating and attach internet gateway to your vpc
