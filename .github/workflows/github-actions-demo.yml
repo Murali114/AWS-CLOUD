@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       my_input:
-          description: My input description
-          required: false
-          type: string
+        description: My input description
+        required: false
+        type: string
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
