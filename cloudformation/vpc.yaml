@@ -50,4 +50,10 @@ Resources:
       VpcId: vpc-0caed34b967ec192e
       Tags:
         - Key: Name
-          Value: PublicRouteTable    
+          Value: PublicRouteTable   
+  MyCfnDefaultRoute:
+    Type: 'AWS::EC2::Route'
+    Properties:
+      RouteTableId: rtb-07bce6eb0060a781e
+      DestinationCidrBlock: '0.0.0.0/0'
+      GatewayId: igw-01882a57410803f36      
