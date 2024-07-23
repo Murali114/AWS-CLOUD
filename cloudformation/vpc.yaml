@@ -89,5 +89,10 @@ Resources:
     Type: 'AWS::EC2::SubnetRouteTableAssociation'
     Properties:
       SubnetId: subnet-08fd480c4d779821c
-      RouteTableId: rtb-0b09ceb62f160b65e                           
+      RouteTableId: rtb-0b09ceb62f160b65e  
+  PrivateSubnetRouteTableAssociation:
+    Type: 'AWS::EC2::SubnetRouteTableAssociation'
+    Properties:
+      SubnetId: subnet-0ae244a070cf7d523
+      RouteTableId: rtb-0b09ceb62f160b65es                             
                  
