@@ -84,5 +84,10 @@ Resources:
     Properties:
       RouteTableId: rtb-08d2190b1e857779c
       DestinationCidrBlock: '0.0.0.0/0'
-      NatGatewayId: nat-0cba1352af7ec557b                        
+      NatGatewayId: nat-0cba1352af7ec557b 
+  PublicSubnetRouteTableAssociation:
+    Type: 'AWS::EC2::SubnetRouteTableAssociation'
+    Properties:
+      SubnetId: subnet-08fd480c4d779821c
+      RouteTableId: rtb-0b09ceb62f160b65e                           
                  
