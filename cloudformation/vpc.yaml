@@ -15,6 +15,7 @@ Resources:
          Value: Prod
        - Key: Department
          Value: DevOps
+  MyCfnSUBNET:       
     Type: AWS::EC2::Subnet
     Properties:
       VpcId: vpc-0caed34b967ec192e
