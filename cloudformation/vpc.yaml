@@ -44,3 +44,10 @@ Resources:
     Properties:
       VpcId: vpc-0caed34b967ec192e
       InternetGatewayId: igw-01882a57410803f36
+  MyCfnPublicRouteTable:
+    Type: 'AWS::EC2::RouteTable'
+    Properties:
+      VpcId: vpc-0caed34b967ec192e
+      Tags:
+        - Key: Name
+          Value: PublicRouteTable    
