@@ -15,51 +15,9 @@ Resources:
          Value: Prod
        - Key: Department
          Value: DevOps
-  MyCfnSPublicSubnet1:       
-    Type: AWS::EC2::Subnet
-    Properties:
-      VpcId: vpc-0caed34b967ec192e
-      CidrBlock: "10.0.1.0/24"
-      AvailabilityZone: ap-south-1a
-      Tags:
-        - Key: Name
-          Value: PublicSubnet1
-  MyCfnPrivateSubnet1:
-    Type: 'AWS::EC2::Subnet'
-    Properties:
-      VpcId: vpc-0caed34b967ec192e
-      CidrBlock: '10.0.2.0/24'
-      AvailabilityZone: ap-south-1b
-      Tags:
-        - Key: Name
-          Value: PrivateSubnet1                 
-  MyCfnIGW:
+  MyCfnInternetGateway:
     Type: 'AWS::EC2::InternetGateway'
     Properties:
       Tags:
         - Key: Name
-          Value: MyInternetGateway  
-  MyCfnAttachGateway:
-    Type: 'AWS::EC2::VPCGatewayAttachment'
-    Properties:
-      VpcId: vpc-0caed34b967ec192e
-      InternetGatewayId: igw-01882a57410803f36
-  MyCfnPublicRouteTable:
-    Type: 'AWS::EC2::RouteTable'
-    Properties:
-      VpcId: vpc-0caed34b967ec192e
-      Tags:
-        - Key: Name
-          Value: PublicRouteTable   
-  MyCfnDefaultRoute:
-    Type: 'AWS::EC2::Route'
-    Properties:
-      RouteTableId: rtb-07bce6eb0060a781e
-      DestinationCidrBlock: '0.0.0.0/0'
-      GatewayId: igw-01882a57410803f36 
-  MyCfnSubnetRouteTableAssociation2:
-    Type: 'AWS::EC2::SubnetRouteTableAssociation'
-    Properties:
-      SubnetId: subnet-05cb56a376a8ae0fc
-      RouteTableId: rtb-07bce6eb0060a781e
-     
+          Value: MyIGW
