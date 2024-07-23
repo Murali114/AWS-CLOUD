@@ -56,4 +56,10 @@ Resources:
     Properties:
       RouteTableId: rtb-07bce6eb0060a781e
       DestinationCidrBlock: '0.0.0.0/0'
-      GatewayId: igw-01882a57410803f36      
+      GatewayId: igw-01882a57410803f36 
+  MyCfnSubnetRouteTableAssociation2:
+    Type: 'AWS::EC2::SubnetRouteTableAssociation'
+    Properties:
+      SubnetId: subnet-05cb56a376a8ae0fc
+      RouteTableId: rtb-07bce6eb0060a781e
+     
