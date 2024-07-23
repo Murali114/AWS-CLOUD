@@ -1,3 +1,6 @@
+# The below format is VPC creation through CloudFormationTemplate
+
+
 AWSTemplateFormatVersion: "2010-09-09"
 Description: >
   This template creates VPC in ap-south-1 region
