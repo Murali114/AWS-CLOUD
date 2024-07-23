@@ -17,6 +17,6 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-south-1
-      - run: aws cloudformation update-stack --stack-name stackvpc --template-body=file://cloudformation/yaml.vpc
+      - run: aws cloudformation update-stack --stack-name prodvpc --template-body=file://cloudformation/yaml.vpc
       - run: sleep 20
-      - run: aws cloudformation describe-stack-events --stack-name stackvpc
+      - run: aws cloudformation describe-stack-events --stack-name prodvpc
