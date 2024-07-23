@@ -25,4 +25,13 @@ Resources:
     Type: 'AWS::EC2::VPCGatewayAttachment'
     Properties:
       VpcId: vpc-0caed34b967ec192e 
-      InternetGatewayId: igw-0d35155b1eda9fb6d       
+      InternetGatewayId: igw-0d35155b1eda9fb6d      
+  MyCfnPublicSubnet:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: vpc-0caed34b967ec192e 
+      CidrBlock: '10.0.1.0/24'
+      AvailabilityZone: ap-south-1a
+      Tags: 
+        - Key: Name
+          Value: PublicSubnet     
