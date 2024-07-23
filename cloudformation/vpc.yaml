@@ -32,4 +32,10 @@ Resources:
       AvailabilityZone: ap-south-1b
       Tags:
         - Key: Name
-          Value: PublicSubnet2                 
+          Value: PublicSubnet2
+  MyCfnIGW:
+    Type: 'AWS::EC2::InternetGateway'
+    Properties:
+      Tags:
+        - Key: Name
+          Value: MyInternetGateway        
