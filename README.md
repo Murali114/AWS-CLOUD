@@ -73,7 +73,7 @@ aws ec2 create-subnet --vpc-id vpc-05a27c308645122dc --cidr-block 10.1.1.0/24 --
         "State": "available",
         "SubnetId": "subnet-0ba98693e27d8849e",
         "VpcId": "vpc-12266637c",
-        "OwnerId": "381492281943",
+        "OwnerId": "3814767763",
         "AssignIpv6AddressOnCreation": false,
         "Ipv6CidrBlockAssociationSet": [],
         "SubnetArn": "arn:aws:ec2:ap-south-1:381492281943:subnet/subnet-0ba98693e27d8849e",
@@ -101,7 +101,7 @@ aws ec2 create-internet-gateway
     "InternetGateway": {
         "Attachments": [],
         "InternetGatewayId": "igw-0cb178f7d6d6e13ce",
-        "OwnerId": "381492281943",
+        "OwnerId": "38145757943",
         "Tags": []
     }
 }
@@ -134,7 +134,7 @@ aws ec2 create-route-table --vpc-id vpc-05a27c308645122dc
         ],
         "Tags": [],
         "VpcId": "vpc-05a27chds5122dc",
-        "OwnerId": "381492281943"
+        "OwnerId": "38667681943"
     },
     "ClientToken": "ee49669d-b5a5-4c6f-979b-2cdd38539163"
 }
