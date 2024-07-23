@@ -43,4 +43,12 @@ Resources:
       AvailabilityZone: ap-south-1a
       Tags: 
         - Key: Name
-          Value: PrivateSubnet          
+          Value: PrivateSubnet 
+  PublicRouteTable:
+    Type: 'AWS::EC2::RouteTable'
+    Properties:
+      VpcId: vpc-0caed34b967ec192e
+      Tags: 
+        - Key: Name
+          Value: PublicRouteTable
+                 
