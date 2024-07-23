@@ -34,4 +34,13 @@ Resources:
       AvailabilityZone: ap-south-1a
       Tags: 
         - Key: Name
-          Value: PublicSubnet     
+          Value: PublicSubnet   
+  MyCfnPrivateSubnet:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: vpc-0caed34b967ec192e
+      CidrBlock: '10.0.2.0/24'
+      AvailabilityZone: ap-south-1a
+      Tags: 
+        - Key: Name
+          Value: PrivateSubnet          
