@@ -15,7 +15,7 @@ Resources:
          Value: Prod
        - Key: Department
          Value: DevOps
-  MyCfnSUBNET:       
+  MyCfnSPublicSubnet1:       
     Type: AWS::EC2::Subnet
     Properties:
       VpcId: vpc-0caed34b967ec192e
@@ -28,8 +28,8 @@ Resources:
     Type: 'AWS::EC2::Subnet'
     Properties:
       VpcId: vpc-0caed34b967ec192e
-      CidrBlock: '10.0.1.0/24'
-      AvailabilityZone: ap-south-1a
+      CidrBlock: '10.0.2.0/24'
+      AvailabilityZone: ap-south-1b
       Tags:
         - Key: Name
           Value: PrivateSubnet1                 
