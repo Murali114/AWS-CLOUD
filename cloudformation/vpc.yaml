@@ -16,10 +16,10 @@ Resources:
        - Key: Department
          Value: DevOps
  PublicSubnet1:
-    Type: 'AWS::EC2::Subnet'
+    Type: AWS::EC2::Subnet
     Properties:
       VpcId: vpc-0caed34b967ec192e
-      CidrBlock: '10.0.1.0/24'
+      CidrBlock: "10.0.1.0/24"
       AvailabilityZone: ap-south-1a
       Tags:
         - Key: Name
