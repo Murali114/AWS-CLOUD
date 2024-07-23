@@ -2,7 +2,7 @@ AWSTemplateFormatVersion: "2010-09-09"
 Description: >
   This template creates VPC in ap-south-1 region
   Author: Murali
-  Company: Havik
+  Company: Marolix
 Resources:
   MyCfnVPC:
     Type: AWS::EC2::VPC
