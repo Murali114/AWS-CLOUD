@@ -42,7 +42,7 @@ Resources:
   MyCfnAttachGateway:
     Type: 'AWS::EC2::VPCGatewayAttachment'
     Properties:
-      VpcId: vpc-0caed34b967ece
+      VpcId: vpc-0caed34b967ec192e
       InternetGatewayId: igw-01882a57410803f36
   MyCfnPublicRouteTable:
     Type: 'AWS::EC2::RouteTable'
