@@ -17,7 +17,7 @@ Resources:
        - Key: Env 
          Value: Prod
        - Key: Department
-         Value: DevOps
+         Value: DevOps        
   MyCfnInternetGateway:
     Type: 'AWS::EC2::InternetGateway'
     Properties:
@@ -98,4 +98,4 @@ Resources:
     Properties:
       SubnetId: subnet-0ae244a070cf7d523
       RouteTableId: rtb-0b09ceb62f160b65e                          
-```                 
+```
