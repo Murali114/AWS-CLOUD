@@ -23,16 +23,16 @@ Resources:
       AvailabilityZone: ap-south-1a
       Tags:
         - Key: Name
-          Value: PublicSubnet1         
-  MyCfnSUBNET:       
-    Type: AWS::EC2::Subnet
+          Value: PublicSubnet1
+  MyCfnPrivateSubnet1:
+    Type: 'AWS::EC2::Subnet'
     Properties:
       VpcId: vpc-0caed34b967ec192e
-      CidrBlock: "10.0.2.0/24"
-      AvailabilityZone: ap-south-1b
+      CidrBlock: '10.0.1.0/24'
+      AvailabilityZone: ap-south-1a
       Tags:
         - Key: Name
-          Value: PublicSubnet2
+          Value: PrivateSubnet1                 
   MyCfnIGW:
     Type: 'AWS::EC2::InternetGateway'
     Properties:
@@ -42,7 +42,7 @@ Resources:
   MyCfnAttachGateway:
     Type: 'AWS::EC2::VPCGatewayAttachment'
     Properties:
-      VpcId: vpc-0caed34b967ec192e
+      VpcId: vpc-0caed34b967ece
       InternetGatewayId: igw-01882a57410803f36
   MyCfnPublicRouteTable:
     Type: 'AWS::EC2::RouteTable'
