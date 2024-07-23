@@ -1,4 +1,4 @@
-# The below format is VPC creation through CloudFormationTemplate
+# The below format is used to create VPC through CloudFormationTemplate
 
 ```
 AWSTemplateFormatVersion: "2010-09-09"
