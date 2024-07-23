@@ -21,3 +21,10 @@ Resources:
       Tags:
         - Key: Name
           Value: MyIGW
+  MyCfnAttachGateway:
+    Type: 'AWS::EC2::VPCGatewayAttachment'
+    Properties:
+      VpcId: vpc-0caed34b967ec192e
+        Ref: 
+      InternetGatewayId: 
+        Ref: igw-0d35155b1eda9fb6d       
