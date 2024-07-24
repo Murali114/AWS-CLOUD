@@ -36,5 +36,4 @@ Resources:
       AvailabilityZone: ap-south-1a
       Tags: 
         - Key: Name
-          Value: PublicSubnet   
-  
+          Value: PublicSubnet
