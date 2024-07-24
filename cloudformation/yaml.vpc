@@ -16,4 +16,10 @@ Resources:
        - Key: Department
          Value: DevOps
        - Key: region
-         Value: IAD  
+         Value: IAD 
+  MyCfnInternetGateway:
+    Type: 'AWS::EC2::InternetGateway'
+    Properties:
+      Tags:
+        - Key: Name
+          Value: MyIGW        
