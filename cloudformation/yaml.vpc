@@ -10,7 +10,7 @@ Resources:
        CidrBlock: "10.1.0.0/16"
        Tags:
        - Key: Name
-         Value: prodvpc
+         Value: myvpc
        - Key: Env 
          Value: Prod
        - Key: Department
