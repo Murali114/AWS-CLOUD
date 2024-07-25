@@ -38,17 +38,7 @@ Resources:
       Tags: 
         - Key: Name
           Value: PublicSubnet
-
-  MyCfnPublicSubnet:
-    Type: 'AWS::EC2::Subnet'
-    Properties:
-      VpcId: !Ref MyCfnVPC
-      CidrBlock: '10.0.1.0/24'
-      AvailabilityZone: ap-south-1b
-      Tags: 
-        - Key: Name
-          Value: PublicSubnet        
-
+       
   MyCfnPrivateSubnet:
     Type: 'AWS::EC2::Subnet'
     Properties:
@@ -58,18 +48,7 @@ Resources:
       Tags: 
         - Key: Name
           Value: PrivateSubnet
-
-  MyCfnPrivateSubnet:
-    Type: 'AWS::EC2::Subnet'
-    Properties:
-      VpcId: !Ref MyCfnVPC
-      CidrBlock: '10.0.2.0/24'
-      AvailabilityZone: ap-south-1b
-      Tags: 
-        - Key: Name
-          Value: PrivateSubnet
         
-
   PublicRouteTable:
     Type: 'AWS::EC2::RouteTable'
     Properties:
