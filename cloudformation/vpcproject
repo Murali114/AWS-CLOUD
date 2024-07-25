@@ -2,12 +2,12 @@ AWSTemplateFormatVersion: "2010-09-09"
 Description: >
   This template creates VPC in ap-south-1 region
   Author: Murali
-  Company: Marolix
+  Company: Havik
 Resources:
   MyCfnVPC:
     Type: AWS::EC2::VPC
     Properties:
-      CidrBlock: "10.2.0.0/16"
+      CidrBlock: "10.0.0.0/16"
       Tags:
       - Key: Name
         Value: MyVPC
@@ -38,17 +38,17 @@ Resources:
       Tags: 
         - Key: Name
           Value: PublicSubnet
-       
+
   MyCfnPrivateSubnet:
     Type: 'AWS::EC2::Subnet'
     Properties:
       VpcId: !Ref MyCfnVPC
       CidrBlock: '10.0.2.0/24'
-      AvailabilityZone: ap-south-1b
+      AvailabilityZone: ap-south-1a
       Tags: 
         - Key: Name
           Value: PrivateSubnet
-        
+
   PublicRouteTable:
     Type: 'AWS::EC2::RouteTable'
     Properties:
