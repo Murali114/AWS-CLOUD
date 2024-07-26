@@ -161,3 +161,10 @@ aws ec2 associate-route-table --subnet-id subnet-xxxxxxxx --route-table-id rtb-x
 #### Heading 4
 ##### Heading 5
 ###### Heading 6
+
+
+**Bold text**
+__Bold text__
+
+*Italic text*
+_Italic text_
