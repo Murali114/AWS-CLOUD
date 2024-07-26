@@ -155,20 +155,6 @@ aws ec2 associate-route-table --subnet-id subnet-xxxxxxxx --route-table-id rtb-x
 ```
 
 
-# hello murali
-## How are you
-### Heading 3
-#### Heading 4
-##### Heading 5
-###### Heading 6
-
-
-**Bold text**
-__Bold text__
-
-*Italic text*
-_Italic text_
-
 
 ### Links
 [I'm an inline-style link](https://www.google.com)
@@ -177,7 +163,7 @@ _Italic text_
 
 [I'm a reference-style link][Arbitrary case-insensitive reference text]
 
-[I'm a relative reference to a repository file](../blob/master/LICENSE)
+[I'm a relative reference to a repository file](https://github.com/Murali114/DevOPsm?tab=readme-ov-file)
 
 [You can use numbers for reference-style link definitions][1]
 
