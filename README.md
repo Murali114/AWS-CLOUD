@@ -178,3 +178,27 @@ Some text to show that the reference links can follow later.
 [arbitrary case-insensitive reference text]: https://www.mozilla.org
 [1]: http://slashdot.org
 [link text itself]: http://www.reddit.com
+
+
+# Markdown Cheatsheet
+
+This is intended as a quick reference and showcase. For more complete info, see John Gruber's original spec and the Github-flavored Markdown info page.
+
+Note that there is also a Cheatsheet specific to Markdown Here if that's what you're looking for. You can also check out more Markdown tools.
+
+## Table of Contents
+Headers
+Emphasis
+Lists
+Links
+Images
+Code and Syntax Highlighting
+Footnotes
+Tables
+Blockquotes
+Inline HTML
+Horizontal Rule
+Line Breaks
+YouTube Videos
+
+## Headers
