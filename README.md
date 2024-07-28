@@ -328,4 +328,4 @@ Some text to show that the reference links can follow later.
 
 ## Images 
 Inline-style: 
-![alt text](https://www.svgrepo.com/show/303552/google-g-2015-logo.pnp "Logo Title Text 1")
+![alt text](https://www.svgrepo.com/show/303552/google-g-2015-logo.svg "Logo Title Text 1")
