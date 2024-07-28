@@ -327,5 +327,12 @@ URLs and URLs in angle brackets will automatically get turned into links. http:/
 Some text to show that the reference links can follow later.
 
 ## Images 
+
+```
+Here's our logo (hover to see the title text):
+Inline-style: 
+![alt text](https://www.svgrepo.com/show/303552/google-g-2015-logo.svg "Logo Title Text 1")
+```
+
 Inline-style: 
 ![alt text](https://www.svgrepo.com/show/303552/google-g-2015-logo.svg "Logo Title Text 1")
