@@ -325,3 +325,7 @@ Or leave it empty and use the link text itself.
 URLs and URLs in angle brackets will automatically get turned into links. http://www.example.com or http://www.example.com and sometimes example.com (but not on Github, for example).
 
 Some text to show that the reference links can follow later.
+
+## Images 
+Inline-style: 
+![alt text](https://www.svgrepo.com/show/303552/google-g-2015-logo.pnp "Logo Title Text 1")
