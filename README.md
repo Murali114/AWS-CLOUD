@@ -370,5 +370,6 @@ print s
 No language indicated, so no syntax highlighting in Markdown Here (varies on Github). 
 But let's throw in a <b>tag</b>.
 ```
-
+```
 https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjvzC_QRv6moAhgNb5C6e3yicKgFND1g2RwA&s
+```
