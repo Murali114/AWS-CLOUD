@@ -331,7 +331,7 @@ Some text to show that the reference links can follow later.
 ```
 Here's our logo (hover to see the title text):
 Inline-style: 
-![alt text](https://www.svgrepo.com/show/303552/google-g-2015-logo.svg "Logo Title Text 1")
+![alt text](https://www.svgrepo.com/show/303/google-g-2015-logo.svg "Logo Title Text 1")
 ```
 
 Inline-style: 
