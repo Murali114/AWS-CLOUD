@@ -1,5 +1,135 @@
 # This is the GitHub repo to showcase my work on Aws
 ## chapter1: Aws cli/cloudformation
+
+### creating Vpc Through CFT by Using paramaters
+
+```
+AWSTemplateFormatVersion: "2010-09-09"
+Description: >
+  This template creates VPC in ap-south-1 region
+  Author: Murali
+  Company: Havik
+
+Parameters:
+  VpcCidr:
+    Type: String
+    Default: 10.0.0.0/16
+    Description: CIDR block for the VPC
+  PublicSubnetCidr:
+    Type: String
+    Default: 10.0.1.0/24
+    Description: CIDR block for the public subnet
+  PrivateSubnetCidr:
+    Type: String
+    Default: 10.0.2.0/24
+    Description: CIDR block for the private subnet
+Resources:
+  MyCfnVPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: !Ref VpcCidr
+      Tags:
+      - Key: Name
+        Value: MyVPC
+      - Key: Env 
+        Value: Prod
+      - Key: Department
+        Value: DevOps        
+
+  MyCfnInternetGateway:
+    Type: 'AWS::EC2::InternetGateway'
+    Properties:
+      Tags:
+        - Key: Name
+          Value: MyIGW
+
+  MyCfnAttachGateway:
+    Type: 'AWS::EC2::VPCGatewayAttachment'
+    Properties:
+      VpcId: !Ref MyCfnVPC
+      InternetGatewayId: !Ref MyCfnInternetGateway
+
+  MyCfnPublicSubnet:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: !Ref MyCfnVPC
+      CidrBlock: !Ref PublicSubnetCidr
+      AvailabilityZone: ap-south-1a
+      Tags: 
+        - Key: Name
+          Value: PublicSubnet
+
+  MyCfnPrivateSubnet:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: !Ref MyCfnVPC
+      CidrBlock: !Ref PrivateSubnetCidr
+      AvailabilityZone: ap-south-1a
+      Tags: 
+        - Key: Name
+          Value: PrivateSubnet
+
+  PublicRouteTable:
+    Type: 'AWS::EC2::RouteTable'
+    Properties:
+      VpcId: !Ref MyCfnVPC
+      Tags: 
+        - Key: Name
+          Value: PublicRouteTable
+
+  PrivateRouteTable:
+    Type: 'AWS::EC2::RouteTable'
+    Properties:
+      VpcId: !Ref MyCfnVPC
+      Tags: 
+        - Key: Name
+          Value: PrivateRouteTable
+
+  PublicRoute:
+    Type: 'AWS::EC2::Route'
+    Properties:
+      RouteTableId: !Ref PublicRouteTable
+      DestinationCidrBlock: '0.0.0.0/0'
+      GatewayId: !Ref MyCfnInternetGateway
+
+  NatGatewayEIP:
+    Type: 'AWS::EC2::EIP'
+    Properties:
+      Domain: vpc 
+
+  NatGateway:
+    Type: 'AWS::EC2::NatGateway'
+    Properties:
+      AllocationId: 
+        Fn::GetAtt: 
+          - NatGatewayEIP
+          - AllocationId
+      SubnetId: !Ref MyCfnPublicSubnet
+      Tags: 
+        - Key: Name
+          Value: MyNATGateway 
+
+  PrivateRoute:
+    Type: 'AWS::EC2::Route'
+    Properties:
+      RouteTableId: !Ref PrivateRouteTable
+      DestinationCidrBlock: '0.0.0.0/0'
+      NatGatewayId: !Ref NatGateway 
+
+  PublicSubnetRouteTableAssociation:
+    Type: 'AWS::EC2::SubnetRouteTableAssociation'
+    Properties:
+      SubnetId: !Ref MyCfnPublicSubnet
+      RouteTableId: !Ref PublicRouteTable  
+
+  PrivateSubnetRouteTableAssociation:
+    Type: 'AWS::EC2::SubnetRouteTableAssociation'
+    Properties:
+      SubnetId: !Ref MyCfnPrivateSubnet
+      RouteTableId: !Ref PrivateRouteTable
+```
+
+
 In this chapter i will create the labs to show the AWS resourse creation through aws cli and cloud formation. 
 
 1.The below is the command to Create VPC through AWS CLI:
