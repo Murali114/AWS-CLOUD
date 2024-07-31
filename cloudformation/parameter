@@ -40,14 +40,14 @@ Resources:
   MyCfnAttachGateway:
     Type: 'AWS::EC2::VPCGatewayAttachment'
     Properties:
-      VpcId: !Ref VpcCidr
+      VpcId: !Ref MyCfnVpcCidr
       InternetGatewayId: !Ref MyCfnInternetGateway
 
   MyCfnPublicSubnet:
     Type: 'AWS::EC2::Subnet'
     Properties:
-      VpcId: !Ref VpcCidr
-      CidrBlock: !Ref PublicSubnetCidr
+      VpcId: !Ref MyCfnVpcCidr
+      CidrBlock: !Ref MyCfnPublicSubnetCidr
       AvailabilityZone: ap-south-1a
       Tags: 
         - Key: Name
@@ -56,9 +56,9 @@ Resources:
   MyCfnPrivateSubnet:
     Type: 'AWS::EC2::Subnet'
     Properties:
-      VpcId: !Ref VpcCidr
-      CidrBlock: !Ref PrivateSubnetCidr
-      AvailabilityZone: ap-south-1a
+      VpcId: !Ref MyCfnVpcCidr
+      CidrBlock: !Ref MyCfnPrivateSubnetCidr
+      AvailabilityZone: ap-south-1b
       Tags: 
         - Key: Name
           Value: PrivateSubnet
@@ -66,7 +66,7 @@ Resources:
   PublicRouteTable:
     Type: 'AWS::EC2::RouteTable'
     Properties:
-      VpcId: !Ref VpcCidr
+      VpcId: !Ref MyCfnVpcCidr
       Tags: 
         - Key: Name
           Value: PublicRouteTable
@@ -74,7 +74,7 @@ Resources:
   PrivateRouteTable:
     Type: 'AWS::EC2::RouteTable'
     Properties:
-      VpcId: !Ref VpcCidr
+      VpcId: !Ref MyCfnVpcCidr
       Tags: 
         - Key: Name
           Value: PrivateRouteTable
@@ -113,11 +113,11 @@ Resources:
   PublicSubnetRouteTableAssociation:
     Type: 'AWS::EC2::SubnetRouteTableAssociation'
     Properties:
-      SubnetId: !Ref PublicSubnetCidr
+      SubnetId: !Ref MyCfnPublicSubnetCidr
       RouteTableId: !Ref PublicRouteTable  
 
   PrivateSubnetRouteTableAssociation:
     Type: 'AWS::EC2::SubnetRouteTableAssociation'
     Properties:
-      SubnetId: !Ref PrivateSubnet
+      SubnetId: !Ref MyCfnPrivateSubnet
       RouteTableId: !Ref PrivateRouteTable    
