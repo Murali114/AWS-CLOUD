@@ -7,15 +7,15 @@ Description: >
 Parameters:
   VpcCidr:
     Type: String
-    Default: 10.1.0.0/16
+    Default: 10.0.0.0/16
     Description: CIDR block for the VPC
   PublicSubnetCidr:
     Type: String
-    Default: 10.0.3.0/24
+    Default: 10.0.1.0/24
     Description: CIDR block for the public subnet
   PrivateSubnetCidr:
     Type: String
-    Default: 10.0.4.0/24
+    Default: 10.0.2.0/24
     Description: CIDR block for the private subnet
 Resources:
   MyCfnVPC:
