@@ -12,7 +12,7 @@ Resources:
         Fn::Base64: !Sub |
           #!/bin/bash
           yum update -y
-          yum install -y aws-cfn-bootstrap
+          yum install httpd -y
           /opt/aws/bin/cfn-init -v --stack ${AWS::StackName} --resource MyEC2Instance --region ${AWS::Region}
       Tags:
         - Key: Name
