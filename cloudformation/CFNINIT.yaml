@@ -34,6 +34,7 @@ Resources:
     Properties:
       ImageId: "ami-025fe52e1f2dc5044"
       InstanceType: "t2.micro"
+      KeyName: 'aug.pem'
       UserData:
         Fn::Base64: |
           #!/bin/bash
