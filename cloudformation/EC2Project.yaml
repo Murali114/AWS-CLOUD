@@ -13,7 +13,7 @@ Resources:
           #!/bin/bash
           yum update -y
           yum install -y aws-cfn-bootstrap
-          /opt/aws/bin/cfn-init -v --stack ${AWS::StackName} --resource MyEC2Instance --region ${AWS::ap-south-1}
+          /opt/aws/bin/cfn-init -v --stack ${AWS::StackName} --resource MyEC2Instance --region ${AWS::Region}
       Metadata:
         AWS::CloudFormation::Init:
           config:
