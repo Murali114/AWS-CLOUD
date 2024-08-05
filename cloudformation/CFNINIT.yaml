@@ -103,7 +103,7 @@ Resources:
       ResourceSignal:
         Timeout: PT5M
     Properties:
-      ImageId: ami-a4c7edb2
+      ImageId: ami-025fe52e1f2dc5044
       KeyName:
         Ref: KeyName
       InstanceType: t2.micro
