@@ -11,8 +11,6 @@ Resources:
       ImageId: ami-00906802948d06e52
       InstanceType: t2.micro
       KeyName: !Ref SSHKey
-      SecurityGroups:
-        - !Ref SSHSecurityGroup
       UserData:
         Fn::Base64: !Sub |
           #!/bin/bash -xe
