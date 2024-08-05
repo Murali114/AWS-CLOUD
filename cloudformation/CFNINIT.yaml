@@ -60,7 +60,7 @@ Resources:
               mode: '000400'
               owner: apache
               group: apache
-            "/var/www/html/index.php":
+            "/var/www/html/index.html":
               content: !Sub |
                 <?php
                 echo '<h1>AWS CloudFormation sample PHP application for ${AWS::StackName}</h1>';
