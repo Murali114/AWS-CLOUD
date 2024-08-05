@@ -12,4 +12,4 @@ Resources:
           FromPort: 80
           ToPort: 80
           CidrIp: "0.0.0.0/0"
-      VpcId: !Ref VPCID  # Make sure to replace with your VPC ID if necessary
+      VpcId: vpc-01cc83b9e9cdc2adf # Make sure to replace with your VPC ID if necessary
