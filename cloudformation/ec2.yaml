@@ -43,10 +43,3 @@ Resources:
                 owner: root
                 group: root
 
-Outputs:
-  InstanceId:
-    Description: 'The Instance ID of the created EC2 instance'
-    Value: !Ref MyEC2Instance
-  PublicDNS:
-    Description: 'The Public DNS of the created EC2 instance'
-    Value: !GetAtt MyEC2Instance.PublicDnsName
