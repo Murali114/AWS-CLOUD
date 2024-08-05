@@ -13,11 +13,11 @@ Resources:
           ToPort: 80
           CidrIp: "0.0.0.0/0"
       VpcId: vpc-01cc83b9e9cdc2adf # Make sure to replace with your VPC ID if necessary
-MyInstance:
+  MyInstance:
     Type: AWS::EC2::Instance
     Properties:
-      AvailabilityZone: us-east-1a
-      ImageId: ami-00906802948d06e52
+      AvailabilityZone: ap-south-1
+      ImageId: ami-025fe52e1f2dc5044
       InstanceType: t2.micro
       KeyName: !Ref SSHKey
       SecurityGroups:
