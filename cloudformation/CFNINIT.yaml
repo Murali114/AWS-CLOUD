@@ -1,41 +1,42 @@
+Parameters:
+  SSHKey:
+    Type: AWS::EC2::KeyPair::KeyName
+    Description: Name of an existing EC2 KeyPair to enable SSH access to the instance
+
 Resources:
   MyInstance:
-    Type: "AWS::EC2::Instance"
+    Type: AWS::EC2::Instance
+    Properties:
+      AvailabilityZone: ap-south-1
+      ImageId: ami-00906802948d06e52
+      InstanceType: t2.micro
+      KeyName: !Ref SSHKey
+      SecurityGroups:
+        - !Ref SSHSecurityGroup
+      UserData:
+        Fn::Base64: !Sub |
+          #!/bin/bash -xe
+          yum update -y aws-cfn-bootstrap
+          /opt/aws/bin/cfn-init -s ${AWS::StackId} -r MyInstance --region ${AWS::Region}
     Metadata:
+      Comment: Install a simple Apache HTTP page
       AWS::CloudFormation::Init:
-        configSets:
-          default:
-            - setup
-        setup:
-          packages:
-            yum:
-              httpd: []
-              git: []
-              vim: []
-            pip:
-              boto3: []
-              requests: []
+        config:
           files:
             "/var/www/html/index.html":
               content: |
                 <html>
-                  <body>
-                    <h1>Welcome to my website</h1>
-                  </body>
+                <body>
+                  <h1>Hello World from EC2 instance!</h1>
+                  <p>This was created using cfn-init</p>
+                </body>
                 </html>
-              mode: "000644"
-              owner: "root"
-              group: "root"
+              mode: '000644'
+          commands:
+            hello:
+              command: "echo 'hello world'"
           services:
             sysvinit:
               httpd:
-                enabled: "true"
-                ensureRunning: "true"
-    Properties:
-      ImageId: "ami-025fe52e1f2dc5044"
-      InstanceType: "t2.micro"
-      KeyName: 'aug.pem'
-      UserData:
-        Fn::Base64: |
-          #!/bin/bash
-          /opt/aws/bin/cfn-init -v --stack ${AWS::StackName} --resource MyInstance --region ${AWS::Region}
+                enabled: 'true'
+                ensureRunning: 'true'
