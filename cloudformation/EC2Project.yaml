@@ -39,9 +39,12 @@ Resources:
                   <IfModule dir_module>
                       DirectoryIndex index.html
                   </IfModule>
-                mode: '000644'
-                owner: root
-                group: root
+                  ErrorLog "logs/error_log"
+                  CustomLog "logs/access_log" common
+              mode: '000644'
+              owner: root
+              group: root
+ 
 
 Outputs:
   InstanceId:
