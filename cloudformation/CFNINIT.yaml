@@ -16,7 +16,7 @@ Resources:
           files:
             "/var/www/html/index.html":
               content: |
-                <h1>Hello from GokceDB!</h1>
+                <h1>POYAM MOSAM</h1>
               mode: "000755"
               owner: root
               group: root
