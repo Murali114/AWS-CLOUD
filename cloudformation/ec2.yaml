@@ -33,9 +33,8 @@ Resources:
               yum:
                 httpd: []  # Package name for Apache HTTP Server
           createIndexFile:
-            files:
-              /var/www/html/index.html:
-                content: |
+            files: var/www/html/index.html:
+            content: |
                   <html>
                   <head>
                     <title>Welcome to Hyderabad</title>
@@ -44,6 +43,6 @@ Resources:
                     <h1>Hello from AWS CloudFormation!</h1>
                   </body>
                   </html>
-                mode: '000644'
-                owner: 'root'
-                group: 'root'
+            mode: '000644'
+            owner: 'root'
+            group: 'root'
