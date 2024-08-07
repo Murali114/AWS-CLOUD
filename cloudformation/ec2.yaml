@@ -33,7 +33,7 @@ Resources:
               yum:
                 httpd: []  # Package name for Apache HTTP Server
           createIndexFile:
-            files: var/www/html/index.html:
+            files: var/www/html/index.html
             content: |
                   <html>
                   <head>
