@@ -1,45 +1,49 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: Create an EC2 instance and install Apache HTTP server using cfn-init
-
 Resources:
   MyEC2Instance:
     Type: 'AWS::EC2::Instance'
     Properties:
-      InstanceType: 't2.micro'
-      ImageId: 'ami-025fe52e1f2dc5044'  # Replace with a valid AMI ID for your region
-      KeyName: 'aug.pem'  # Replace with your EC2 key pair name
+      InstanceType: t2.micro
+      ImageId: ami-025fe52e1f2dc5044  # Replace with a valid AMI ID
+      KeyName: my-key-pair            # Replace with your key pair name
       UserData:
-        Fn::Base64: !Sub |
+        Fn::Base64: |
           #!/bin/bash
           yum update -y
           yum install -y aws-cfn-bootstrap
-          /opt/aws/bin/cfn-init -v --stack ${AWS::StackName} --resource MyEC2Instance --region ${AWS::Region}
+
+          # Install and configure cfn-init
+          /opt/aws/bin/cfn-init -v \
+            --stack ${AWS::StackName} \
+            --resource MyEC2Instance \
+            --configsets InstallHttpPackage
+
+          # Start the httpd service
+          service httpd start
+          chkconfig httpd on
+
       Metadata:
         AWS::CloudFormation::Init:
-          config:
+          configSets:
+            InstallHttpPackage:
+              - install
+              - createIndexFile
+          install:
             packages:
               yum:
-                httpd: []  # Install Apache HTTP server
-            services:
-              sysvinit:
-                httpd:
-                  enabled: 'true'
-                  ensureRunning: 'true'
+                httpd: []  # Package name for Apache HTTP Server
+          createIndexFile:
             files:
-              /etc/httpd/conf/httpd.conf:
+              /var/www/html/index.html:
                 content: |
-                  ServerRoot "/etc/httpd"
-                  Listen 80
-                  LoadModule dir_module modules/mod_dir.so
-                  DocumentRoot "/var/www/html"
-                  <Directory "/var/www/html">
-                      AllowOverride None
-                      Require all granted
-                  </Directory>
-                  <IfModule dir_module>
-                      DirectoryIndex index.html
-                  </IfModule>
+                  <html>
+                  <head>
+                    <title>Welcome to Hyderabad</title>
+                  </head>
+                  <body>
+                    <h1>Hello from AWS CloudFormation!</h1>
+                  </body>
+                  </html>
                 mode: '000644'
-                owner: root
-                group: root
-
+                owner: 'root'
+                group: 'root'
